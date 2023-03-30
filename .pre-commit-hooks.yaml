@@ -1,0 +1,6 @@
+- id: check-yamlschema
+  name: check-yamlschema
+  description: Validates YAML files with multiple documents according to their json schemas
+  entry: pre-commit check-yamlschema
+  language: python
+  types: [yaml]

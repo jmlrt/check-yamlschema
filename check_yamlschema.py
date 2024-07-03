@@ -1,5 +1,7 @@
 import argparse
+import json
 import logging
+import os
 import re
 
 import jsonschema
@@ -43,7 +45,14 @@ def download_schema(schema_url):
 
 
 def validate_document(document, schema_url):
-    schema = download_schema(schema_url)
+    if schema_url.startswith("http://") or schema_url.startswith("https://"):
+        schema = download_schema(schema_url)
+    else:
+        current_dir = os.path.dirname(os.path.realpath(document))
+        schema_path = os.path.join(current_dir, schema_url)
+
+        with open(schema_path) as file:
+            schema = json.load(file)
     jsonschema.validate(instance=document, schema=schema)
 
 

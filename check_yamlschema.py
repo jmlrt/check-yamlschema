@@ -44,11 +44,11 @@ def download_schema(schema_url):
     return response.json()
 
 
-def validate_document(document, schema_url):
+def validate_document(file, document, schema_url):
     if schema_url.startswith("http://") or schema_url.startswith("https://"):
         schema = download_schema(schema_url)
     else:
-        current_dir = os.path.dirname(os.path.realpath(document))
+        current_dir = os.path.dirname(os.path.realpath(file))
         schema_path = os.path.join(current_dir, schema_url)
 
         with open(schema_path) as file:
@@ -73,7 +73,7 @@ def main():
         logging.info("File %s: %s documents", file, len(yaml_documents))
         for index, doc in enumerate(yaml_documents):
             if doc["schema_url"] is not None:
-                validate_document(doc["content"], doc["schema_url"])
+                validate_document(file, doc["content"], doc["schema_url"])
                 logging.info(
                     "- Document %s validated according to %s", index, doc["schema_url"]
                 )

@@ -1,0 +1,51 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "food": {
+        "type": "array",
+        "items": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "vegetables": {
+                  "type": "string"
+                }
+              },
+              "required": ["vegetables"],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "fruits": {
+                  "type": "object",
+                  "properties": {
+                    "citrics": {
+                      "type": "string"
+                    },
+                    "tropical": {
+                      "type": "string"
+                    },
+                    "nuts": {
+                      "type": "string"
+                    },
+                    "sweets": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["citrics", "tropical", "nuts", "sweets"],
+                  "additionalProperties": false
+                }
+              },
+              "required": ["fruits"],
+              "additionalProperties": false
+            }
+          ]
+        }
+      }
+    },
+    "required": ["food"],
+    "additionalProperties": false
+  }

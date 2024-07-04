@@ -1,0 +1,82 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "age": {
+        "type": "integer"
+      },
+      "hobbies": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "programming_languages": {
+        "type": "object",
+        "properties": {
+          "java": {
+            "type": "string",
+            "enum": ["Beginner", "Intermediate", "Advanced"]
+          },
+          "python": {
+            "type": "string",
+            "enum": ["Beginner", "Intermediate", "Advanced"]
+          },
+          "javascript": {
+            "type": "string",
+            "enum": ["Beginner", "Intermediate", "Advanced"]
+          }
+        },
+        "required": ["java", "python", "javascript"],
+        "additionalProperties": false
+      },
+      "favorite_food": {
+        "type": "array",
+        "items": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "vegetables": {
+                  "type": "string"
+                }
+              },
+              "required": ["vegetables"],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "fruits": {
+                  "type": "object",
+                  "properties": {
+                    "citrics": {
+                      "type": "string"
+                    },
+                    "tropical": {
+                      "type": "string"
+                    },
+                    "nuts": {
+                      "type": "string"
+                    },
+                    "sweets": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["citrics", "tropical", "nuts", "sweets"],
+                  "additionalProperties": false
+                }
+              },
+              "required": ["fruits"],
+              "additionalProperties": false
+            }
+          ]
+        }
+      }
+    },
+    "required": ["name", "age", "hobbies", "programming_languages", "favorite_food"],
+    "additionalProperties": false
+  }

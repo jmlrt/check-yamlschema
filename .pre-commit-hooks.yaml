@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=https://json.schemastore.org/pre-commit-hooks.json
 - id: check-yamlschema
   name: Check YAML schemas
   description: Validates YAML files with multiple documents according to their json schemas

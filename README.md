@@ -47,7 +47,7 @@ Add this to your `.pre-commit-config.yaml`:
 
 ```yaml
   - repo: https://github.com/jmlrt/check-yamlschema
-    rev: v0.0.4
+    rev: v0.0.5
     hooks:
       - id: check-yamlschema
 ```

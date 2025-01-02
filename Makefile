@@ -3,7 +3,7 @@ PYTHON := $(VENV)/bin/python
 
 
 $(PYTHON):
-	virtualenv $(VENV) --python python3.8
+	virtualenv $(VENV) --python python3.9
 	$(PYTHON) -m pip install --upgrade pip build twine
 
 requirements.txt: install

@@ -17,3 +17,5 @@ jobs:
       shell: bash
     - run: check-yamlschema -v tests/test.yaml .pre-commit-config.yaml .pre-commit-hooks.yaml .github/workflows/pre-commit.yml
       shell: bash
+    - run: check-yamlschema --k8s -v tests/test-k8s.yaml
+      shell: bash

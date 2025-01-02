@@ -1,0 +1,9 @@
+---
+# yaml-language-server: $schema=./extraEnvs.json
+extraEnvs:
+  - name: GOMEMLIMIT
+    valueFrom:
+      resourceFieldRef:
+        containerName: vmagent
+        divisor: "1"
+        resource: limits.memory

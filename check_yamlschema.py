@@ -123,11 +123,11 @@ def main():
                         file, doc["content"], doc["schema_url"], validator
                     )
                     logging.debug(
-                        f"{file} document {index}: validated according to {doc["schema_url"]}"
+                        f"{file} document {index}: validated according to {doc['schema_url']}"
                     )
                 except jsonschema.exceptions.ValidationError as exception:
                     logging.error(
-                        f"{file} document {index}: validation failed according to {doc["schema_url"]}:\n"
+                        f"{file} document {index}: validation failed according to {doc['schema_url']}:\n"
                         f"{exception.message}"
                     )
                     logging.debug(exception, stack_info=True)

@@ -82,7 +82,7 @@ def load_yaml_documents(file_path):
 def download_schema(schema_url):
     response = requests.get(schema_url)
     response.raise_for_status()
-    return response.json()
+    return yaml.safe_load(response.text)
 
 
 def validate_document(file, document, schema_url, validator):

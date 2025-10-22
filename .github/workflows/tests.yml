@@ -1,6 +1,7 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 name: tests
 
-on:
+"on":
   pull_request:
   push:
     branches: [main]
@@ -15,7 +16,7 @@ jobs:
     - uses: actions/setup-python@v3
     - run: python -m pip install .
       shell: bash
-    - run: check-yamlschema -v tests/test.yaml .pre-commit-config.yaml .pre-commit-hooks.yaml .github/workflows/pre-commit.yml
+    - run: check-yamlschema -v tests/test.yaml tests/test-remote.yaml .pre-commit-config.yaml .pre-commit-hooks.yaml .github/workflows/pre-commit.yml
       shell: bash
     - run: check-yamlschema --k8s -v tests/test-k8s.yaml
       shell: bash

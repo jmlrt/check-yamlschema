@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/brynpickering/check-yamlschema/refs/heads/patch-1/tests/food.yaml
+food: # Some YAML document
+  - vegetables: tomatoes
+  - fruits:
+      citrics: oranges
+      tropical: bananas
+      nuts: peanuts
+      sweets: raisins
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/brynpickering/check-yamlschema/refs/heads/patch-1/tests/food.json
+food: # Some YAML document
+  - vegetables: tomatoes
+  - fruits:
+      citrics: oranges
+      tropical: bananas
+      nuts: peanuts
+      sweets: raisins

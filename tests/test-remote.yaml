@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/brynpickering/check-yamlschema/refs/heads/patch-1/tests/food.yaml
+# yaml-language-server: $schema=https://raw.githubusercontent.com/jmlrt/check-yamlschema/refs/heads/main/tests/food.yaml
 food: # Some YAML document
   - vegetables: tomatoes
   - fruits:
@@ -7,7 +7,7 @@ food: # Some YAML document
       nuts: peanuts
       sweets: raisins
 ---
-# yaml-language-server: $schema=https://raw.githubusercontent.com/brynpickering/check-yamlschema/refs/heads/patch-1/tests/food.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/jmlrt/check-yamlschema/refs/heads/main/tests/food.json
 food: # Some YAML document
   - vegetables: tomatoes
   - fruits:

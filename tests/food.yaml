@@ -1,0 +1,39 @@
+$schema: http://json-schema.org/draft-07/schema#
+additionalProperties: false
+properties:
+  food:
+    items:
+      oneOf:
+      - additionalProperties: false
+        properties:
+          vegetables:
+            type: string
+        required:
+        - vegetables
+        type: object
+      - additionalProperties: false
+        properties:
+          fruits:
+            additionalProperties: false
+            properties:
+              citrics:
+                type: string
+              nuts:
+                type: string
+              sweets:
+                type: string
+              tropical:
+                type: string
+            required:
+            - citrics
+            - tropical
+            - nuts
+            - sweets
+            type: object
+        required:
+        - fruits
+        type: object
+    type: array
+required:
+- food
+type: object
